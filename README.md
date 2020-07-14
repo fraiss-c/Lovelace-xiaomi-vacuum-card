@@ -1,0 +1,1 @@
+# Lovelace-xiaomi-vacuum-card
