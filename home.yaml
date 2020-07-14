@@ -1,0 +1,120 @@
+badges: []
+icon: 'mdi:home'
+panel: false
+path: default_view
+theme: ''
+title: ''
+cards:
+  - type: picture-elements
+    image: /local/Vacuum/xiaomi_vacuum_card.png
+    elements:
+    - type: state-label
+      entity: sensor.vacuum_name
+      style:
+        top: 10%
+        left: 50%
+    # OPERATION
+    - type: state-label
+      entity: sensor.vacuum_area
+      style:
+        top: 25%
+        left: 33%
+        font-size: 80%
+    - type: state-label
+      entity: sensor.vacuum_status
+      style:
+        top: 34%
+        left: 10%
+        font-size: 80%
+    - type: state-label
+      entity: sensor.vacuum_battery
+      style:
+        top: 51%
+        left: 9%
+        font-size: 80%
+    - type: state-label
+      entity: sensor.vacuum_mode
+      style:
+        top: 71%
+        left: 9%
+        font-size: 80%
+    # MAINTENANCE
+    - type: state-label
+      entity: sensor.vacuum_time
+      style:
+        top: 25%
+        left: 66%
+        font-size: 80%
+    - type: state-label
+      entity: sensor.vacuum_sensor
+      style:
+        top: 33%
+        left: 93%
+        font-size: 80%
+    - type: state-label
+      entity: sensor.vacuum_side_brush
+      style:
+        top: 42%
+        left: 91%
+        font-size: 80%
+    - type: state-label
+      entity: sensor.vacuum_main_brush
+      style:
+        top: 57%
+        left: 91%
+        font-size: 75%
+    - type: state-label
+      entity: sensor.vacuum_filter
+      style:
+        top: 71%
+        left: 93%
+        font-size: 80%
+    # ICONS
+    - type: icon
+      icon: mdi:play
+      tap_action:
+        action: call-service
+        service: vacuum.start
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+      style:
+        top: 92%
+        left: 17%
+    - type: icon
+      icon: mdi:stop
+      tap_action:
+        action: call-service
+        service: vacuum.stop
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+      style:
+        top: 92%
+        left: 33%
+    - type: icon
+      icon: mdi:home
+      tap_action:
+        action: call-service
+        service: vacuum.return_to_base
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+      style:
+        top: 92%
+        left: 50%
+    - type: icon
+      icon: mdi:target
+      tap_action:
+        action: navigate
+        navigation_path: vacuum
+      style:
+        top: 92%
+        left: 67%
+    - type: icon
+      icon: mdi:bell-ring
+      tap_action:
+        action: call-service
+        service: vacuum.locate
+        service_data:
+          entity_id: vacuum.xiaomi_vacuum_cleaner
+      style:
+        top: 92%
+        left: 83%

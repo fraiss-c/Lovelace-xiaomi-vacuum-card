@@ -1,0 +1,67 @@
+- platform: template
+  sensors:
+    vacuum_status:
+      friendly_name: "Vacuum - Status"
+      value_template: "Status: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.status }}"
+
+- platform: template
+  sensors:
+    vacuum_name:
+      friendly_name: "Vacuum - Name"
+      value_template: "{{ states.vacuum.xiaomi_vacuum_cleaner.attributes.friendly_name }}"
+
+- platform: template
+  sensors:
+    vacuum_mode:
+      friendly_name: "Vacuum - Mode"
+      value_template: "Mode: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.fan_speed }}"
+
+- platform: template
+  sensors:
+    vacuum_area:
+      friendly_name: "Vacuum - Area"
+      value_template: "Area: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.cleaned_area }}"
+      unit_of_measurement: 'm²'
+
+- platform: template
+  sensors:
+    vacuum_time:
+      friendly_name: "Vacuum - Time"
+      value_template: "Time: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.cleaning_time }}"
+      unit_of_measurement: 'min'
+
+- platform: template
+  sensors:
+    vacuum_main_brush:
+      friendly_name: "Vacuum - Main Brush"
+      value_template: "Main Brush: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.main_brush_left }}"
+      unit_of_measurement: 'h'
+
+- platform: template
+  sensors:
+    vacuum_side_brush:
+      friendly_name: "Vacuum - Side Brush"
+      value_template: "Side Brush: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.side_brush_left }}"
+      unit_of_measurement: 'h'
+
+- platform: template
+  sensors:
+    vacuum_filter:
+      friendly_name: "Vacuum - Filter"
+      value_template: "Filter: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.filter_left }}"
+      unit_of_measurement: 'h'
+
+- platform: template
+  sensors:
+    vacuum_sensor:
+      friendly_name: "Vacuum - Sensor"
+      value_template: "Sensor: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.sensor_dirty_left }}"
+      unit_of_measurement: 'h'
+
+- platform: template
+  sensors:
+    vacuum_battery:
+      friendly_name: "Vacuum - Battery"
+      value_template: "Battery: {{ states.vacuum.xiaomi_vacuum_cleaner.attributes.battery_level }}"
+      device_class: battery
+      unit_of_measurement: '%'
